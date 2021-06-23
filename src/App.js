@@ -34,8 +34,14 @@ class App extends Component {
 
           <Switch>
             <Route exact path= '/' component={ Home }  />
-            <Route path='/whiskeyindex' component= { WhiskeyIndex } />
-            <Route path='/whiskeyshow/:id' component= { WhiskeyShow } />
+            <Route path='/whiskeyindex' render={ (props) => <WhiskeyIndex whiskey = {this.state.whiskey} /> } />
+            <Route 
+            exact path= {"/whiskeyshow/:id"} 
+            render = {(props) => {
+              let id = props.match.params.id
+              let whiskey = this.state.whiskey.find(whiskey => whiskey.id === parseInt(id))
+              return <WhiskeyShow whiskey={ whiskey } />
+            }} />
             <Route path='/whiskeynew' component= { WhiskeyNew } />
             <Route path='/whiskeyedit/:id' component= { WhiskeyEdit } />
             <Route component= { NotFound } />

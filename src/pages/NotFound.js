@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-
+import notfound from '../assets/notfound.png'
 class NotFound extends Component {
   render() {
       return(
-          <>Not found
+          <>
+          <img src = { notfound } alt = "not found whiskey image"></img>
           </>
       )
   }
