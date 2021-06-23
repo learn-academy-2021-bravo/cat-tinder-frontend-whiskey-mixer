@@ -6,16 +6,17 @@ import { NavLink } from 'react-router-dom'
 
 class WhiskeyIndex extends Component {
   render() {
+    let { whiskey } = this.props
     return (
       <>
         <h2>This is the Index Page</h2>
         <br />
         <Col sm="6">
-          {this.props.whiskey.map((whiskey, index) => {
+          { whiskey && whiskey.map(whiskey => {
             return (
-              <Card body key={ index }>
+              <Card key = {whiskey.id}>
                 <CardTitle>
-                  <NavLink to={`/whiskeyshow/${whiskey.id}`} key = {whiskey.id}>
+                  <NavLink to={`/whiskeyshow/${whiskey.id}`}>
                   <h4>{whiskey.name}</h4>
                   </NavLink>
                 </CardTitle>

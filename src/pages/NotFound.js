@@ -4,7 +4,7 @@ class NotFound extends Component {
   render() {
       return(
           <>
-          <img src = { notfound } alt = "not found whiskey image"></img>
+          <img src = { notfound } alt = "not found whiskey"></img>
           </>
       )
   }
