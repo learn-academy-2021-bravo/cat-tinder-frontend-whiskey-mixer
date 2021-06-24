@@ -33,16 +33,16 @@ class WhiskeyNew extends Component {
   }
   render() {
     return (
-      <>
-        <h2>This is the New Page</h2>
-        <Form>
+      <div id = "new-form">
+        <h2 id ="h2">Create a New Whiskey</h2>
+        <Form id ="form">
           <FormGroup>
             <Label for = "name">Name</Label>
             <Input type="string" name="name" onChange = {this.handleChange} value = {this.state.form.name}/>          
             </FormGroup>
             <FormGroup>
             <Label for = "age">Age</Label>
-            <Input type="string" name="age"onChange = {this.handleChange} value = {this.state.form.age}/>          
+            <Input type="string" name="age"onChange = {this.handleChange} value = {this.state.form.age} />          
             </FormGroup>
             <FormGroup>
             <Label for = "country">Country</Label>
@@ -65,7 +65,7 @@ class WhiskeyNew extends Component {
 
 
 
-      </>
+      </div>
     )
   }
 }
