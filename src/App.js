@@ -31,6 +31,11 @@ class App extends Component {
       console.log(newwhiskey)
     }
 
+    updateWhiskey = (whiskey, id) => {
+      console.log("whiskey:", whiskey)
+      console.log("id:", id)
+    }
+
     render() {
       return(
         <Router>
@@ -47,7 +52,20 @@ class App extends Component {
               return <WhiskeyShow whiskey={ whiskey } />
             }} />
             <Route path='/whiskeynew' render = { (props) => <WhiskeyNew createNewWhiskey = {this.createNewWhiskey } />} />
-            <Route path='/whiskeyedit/:id' component= { WhiskeyEdit } />
+            <Route exact path={"/whiskeyedit/:id"}
+             render={ (props)  => {
+               let id = props.match.params.id
+               let whiskey = this.state.whiskey.find(whiskey => whiskey.id === parseInt(id))
+               return(
+                 <WhiskeyEdit
+                 updateWhiskey={this.updateWhiskey}
+                 whiskey = { whiskey} 
+               />
+               )
+             }}
+             
+            
+               />
             <Route component= { NotFound } />
           </Switch>
           <Footer />

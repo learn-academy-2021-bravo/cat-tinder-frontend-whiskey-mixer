@@ -26,10 +26,10 @@ class Header extends Component {
             < NavLink to="/">Home</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink to="whiskeyindex">Whiskey List</NavLink>
+            <NavLink to="../whiskeyindex">Whiskey List</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink to="whiskeynew">Create New Whiskey</NavLink>
+            <NavLink to="../whiskeynew">Create New Whiskey</NavLink>
           </NavItem>
         </NavbarBrand> 
              {/* <UncontrolledDropdown nav inNavbar>
