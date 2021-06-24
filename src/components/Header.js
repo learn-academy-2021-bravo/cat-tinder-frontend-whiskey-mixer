@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-// import React, { useState } from 'react';
 
+import { NavLink } from 'react-router-dom'
 import {
   Collapse,
   Navbar,
@@ -8,7 +8,6 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
@@ -21,16 +20,19 @@ class Header extends Component {
   render() {
     return (
       <>
-       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">Whiskey Mixer</NavbarBrand>
-          <Nav className="mr-auto" navbar>
-            <NavItem>
-              <NavLink href="/components/">Whiskey</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="#">Regions</NavLink>
-            </NavItem>
-            <UncontrolledDropdown nav inNavbar>
+       <Navbar id ="navbar" color="light" light expand="md">
+        <NavbarBrand >
+          <NavItem>
+            < NavLink to="/">Home</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink to="whiskeyindex">Whiskey List</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink to="whiskeynew">Create New Whiskey</NavLink>
+          </NavItem>
+        </NavbarBrand> 
+             {/* <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
                 Options
               </DropdownToggle>
@@ -46,8 +48,8 @@ class Header extends Component {
                   Reset
                 </DropdownItem>
               </DropdownMenu>
-            </UncontrolledDropdown>
-          </Nav>
+            </UncontrolledDropdown> */}
+          
         </Navbar>
       </>
     )

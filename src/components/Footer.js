@@ -9,13 +9,13 @@ class Footer extends Component{
       <footer id = "footer">
         <Nav>
           <NavItem>
-            <NavLink href="#">Home</NavLink>
+            <NavLink to="/">Home</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#">Whiskey</NavLink>
+            <NavLink to="whiskeyindex">Whiskey</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#">Regions</NavLink>
+            <NavLink to="whiskeynew">Create New Whiskey</NavLink>
           </NavItem>
           <NavItem>
             <NavLink to = "/">&copy; 2021 Chris and Erik Whiskey Mixer</NavLink>

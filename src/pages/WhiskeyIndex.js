@@ -9,9 +9,9 @@ class WhiskeyIndex extends Component {
     let { whiskey } = this.props
     return (
       <>
-        <h2>This is the Index Page</h2>
+        <h2 id ="h2" >Whiskeys</h2>
         <br />
-        <Col sm="6">
+        <Col id = "form" sm="6">
           { whiskey && whiskey.map(whiskey => {
             return (
               <Card key = {whiskey.id}>
