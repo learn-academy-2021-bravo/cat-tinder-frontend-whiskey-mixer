@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Nav, NavItem, NavLink } from 'reactstrap';
+import { Nav, NavItem } from 'reactstrap';
+import { NavLink } from 'react-router-dom'
 
 
 class Footer extends Component{
@@ -7,18 +8,18 @@ class Footer extends Component{
     return(
       <>
       <footer id = "footer">
-        <Nav>
+      <Nav id = "nav">
           <NavItem>
-            <NavLink to="/">Home</NavLink>
+            <NavLink class="navbar-link" to="/">Home</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink to="whiskeyindex">Whiskey</NavLink>
+            <NavLink class="navbar-link" to="whiskeyindex">Whiskey</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink to="whiskeynew">Create New Whiskey</NavLink>
+            <NavLink class="navbar-link" to="whiskeynew">Create New Whiskey</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink to = "/">&copy; 2021 Chris and Erik Whiskey Mixer</NavLink>
+            <NavLink class="navbar-link" to = "/">&copy; 2021 Chris and Erik Whiskey Mixer</NavLink>
           </NavItem>
         </Nav>
       </footer>

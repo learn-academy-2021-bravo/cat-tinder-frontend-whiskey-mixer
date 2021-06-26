@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { Card, CardTitle, Col } from 'reactstrap'
+import { Card, CardTitle, Col, Button } from 'reactstrap'
 
 import { NavLink } from 'react-router-dom'
+
 
 
 class WhiskeyIndex extends Component {
@@ -24,6 +25,14 @@ class WhiskeyIndex extends Component {
             )
           })}
         </Col>
+        <br />
+        <div id = "button">
+        <NavLink to={`/whiskeynew`}>
+        <Button color = "primary">
+          Create a Whiskey
+        </Button>
+        </NavLink>
+        </div>
       </>
     )
   }
