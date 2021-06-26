@@ -30,6 +30,16 @@ ul.nav{
 #root{
   margin: 5px;
 }
-#navbar{
-  
+.navbar-link{
+    padding: 15px;
+    margin: 35px;
+  }
+#button{
+  text-align: center;
+}
+
+#mixer{
+  text-align: center;
+  width: 55%;
+  margin: auto;
 }

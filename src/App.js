@@ -17,55 +17,97 @@ import {
   Switch
 } from 'react-router-dom'
 
-import mockWhiskey from './mockWhiskey'
 
 class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      whiskey: mockWhiskey,
+      whiskey: [],
       
     }
     }
-    createNewWhiskey = (newwhiskey) => {
-      console.log(newwhiskey)
-    }
+
+componentDidMount(){
+  this.whiskeyIndex()
+}
+
+whiskeyIndex = () => {
+  fetch("http://localhost:3000/whiskeys")
+  .then(response => response.json())
+  .then(whiskeyArray => this.setState({ whiskey: whiskeyArray}))
+  .catch(errors => console.log("index errors:", errors))
+}
+
+createNewWhiskey = (newwhiskey) => {
+  return fetch("http://localhost:3000/whiskeys", {
+    body: JSON.stringify(newwhiskey),
+    headers: {
+      "Content-Type": "application/json"
+    },
+    method: "POST"
+  })
+    .then(response => response.json())
+    .then(payload => this.whiskeyIndex())
+    .catch(errors => {
+      console.log("create errors:", errors)
+    })
+  }
 
     updateWhiskey = (whiskey, id) => {
-      console.log("whiskey:", whiskey)
-      console.log("id:", id)
+      fetch(`http://localhost:3000/whiskeys/${id}`, {
+        body: JSON.stringify(whiskey),
+        headers: {
+          "Content-Type": "application/json"
+        },
+        method: "PATCH"
+      })
+      .then(response => response.json())
+      .then(payload => this.whiskeyIndex())
+      .catch(errors => console.log("update errors:", errors))
     }
 
+    deleteWhiskey = (id) => {
+      fetch(`http://localhost:3000/whiskeys/${id}`, {
+        headers: {
+          "Content-type": "application/json"
+        },
+        method: "DELETE"
+      })
+      .then(response => response.json())
+      .then(payload => this.whiskeyIndex())
+      .catch(errors => console.log("delete errors:", errors))
+    }
+    
+
     render() {
+      console.log(this.state.whiskey)
       return(
         <Router>
           <Header />
 
           <Switch>
             <Route exact path= '/' component={ Home }  />
-            <Route path='/whiskeyindex' render={ (props) => <WhiskeyIndex whiskey = {this.state.whiskey} /> } />
-            <Route 
-            exact path= {"/whiskeyshow/:id"} 
-            render = {(props) => {
+            <Route path='/whiskeyindex' render={ (props) => <WhiskeyIndex whiskey={this.state.whiskey} /> } />
+            <Route path= "/whiskeyshow/:id" render = { (props) => {
               let id = props.match.params.id
-              let whiskey = this.state.whiskey.find(whiskey => whiskey.id === parseInt(id))
-              return <WhiskeyShow whiskey={ whiskey } />
+              let whiskey = this.state.whiskey.find(whiskey => whiskey.id === +id)
+              // {console.log("whiskey:", whiskey)}
+              return <WhiskeyShow whiskey={ whiskey } deleteWhiskey={this.deleteWhiskey}/>
             }} />
             <Route path='/whiskeynew' render = { (props) => <WhiskeyNew createNewWhiskey = {this.createNewWhiskey } />} />
-            <Route exact path={"/whiskeyedit/:id"}
-             render={ (props)  => {
+            <Route exact path={"/whiskeyedit/:id"} render={ (props)  => {
                let id = props.match.params.id
-               let whiskey = this.state.whiskey.find(whiskey => whiskey.id === parseInt(id))
+               let whiskey = this.state.whiskeys.find(whiskey => whiskey.id === parseInt(id))
                return(
                  <WhiskeyEdit
                  updateWhiskey={this.updateWhiskey}
                  whiskey = { whiskey} 
                />
-               )
-             }}
+               )}
+             }
+             />
              
-            
-               />
+               
             <Route component= { NotFound } />
           </Switch>
           <Footer />
