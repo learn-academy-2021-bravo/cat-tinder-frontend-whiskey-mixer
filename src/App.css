@@ -18,6 +18,7 @@ ul.nav{
   text-align: center;
   padding: 15px;
   font-size: 3rem;
+  text-shadow: 1px 1px 2px pink;
 }
 #form {
   text-align: center;
@@ -42,4 +43,11 @@ ul.nav{
   text-align: center;
   width: 55%;
   margin: auto;
+}
+#home-img{
+  filter: drop-shadow(0 0 0.75rem rgb(7, 7, 7));
+  border-radius: 30px;
+}
+#home-button{
+  margin: 20px;
 }
