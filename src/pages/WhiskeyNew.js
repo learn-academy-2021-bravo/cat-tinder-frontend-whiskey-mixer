@@ -54,6 +54,7 @@ class WhiskeyNew extends Component {
             </FormGroup>
             <br />
             <Button 
+            id ="new-button"
             name="submit"
             color="success"
             onClick={this.handleSubmit}

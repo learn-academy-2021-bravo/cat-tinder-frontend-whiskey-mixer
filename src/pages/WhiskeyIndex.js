@@ -28,7 +28,7 @@ class WhiskeyIndex extends Component {
         <br />
         <div id = "button">
         <NavLink to={`/whiskeynew`}>
-        <Button color = "primary">
+        <Button id ="button-index" color = "primary">
           Create a Whiskey
         </Button>
         </NavLink>
