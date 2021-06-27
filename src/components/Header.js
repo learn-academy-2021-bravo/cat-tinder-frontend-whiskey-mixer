@@ -21,17 +21,16 @@ class Header extends Component {
     return (
       <>
        <Navbar id ="navbar" color="light" light expand="md">
-        <NavbarBrand >
-          <NavItem>
-            < NavLink to="/">Home</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink to="/whiskeyindex">Whiskey List</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink to="/whiskeynew">Create New Whiskey</NavLink>
-          </NavItem>
-        </NavbarBrand> 
+        <NavItem>
+          < NavLink to="/">Home</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink to="/whiskeyindex">Whiskey List</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink to="/whiskeynew">Create New Whiskey</NavLink>
+        </NavItem>
+        
              {/* <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
                 Options
