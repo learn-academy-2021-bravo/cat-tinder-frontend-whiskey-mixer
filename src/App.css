@@ -19,6 +19,7 @@ ul.nav{
   padding: 15px;
   font-size: 3rem;
   text-shadow: 1px 1px 2px pink;
+  
 }
 #form {
   text-align: center;
@@ -45,9 +46,16 @@ ul.nav{
   margin: auto;
 }
 #home-img{
-  filter: drop-shadow(0 0 0.75rem rgb(7, 7, 7));
+  filter: drop-shadow(0 0 0.75rem rgb(5, 5, 6));
   border-radius: 30px;
 }
 #home-button{
   margin: 20px;
+  filter: drop-shadow(0 0 0.75rem rgb(18, 173, 3));
+}
+#new-button{
+  filter: drop-shadow(0 0 0.75rem rgb(18, 173, 3));
+}
+#button-index{
+  filter: drop-shadow(0 0 0.75rem rgb(67, 82, 245));
 }
