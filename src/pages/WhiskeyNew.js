@@ -19,10 +19,8 @@ class WhiskeyNew extends Component {
   }
   
   handleChange = (e) => {
-    // destructuring form out of state
     let { form } = this.state
     form[e.target.name] = e.target.value
-    // setting state to the updated form
     this.setState({ form: form })
   }
 
