@@ -7,24 +7,27 @@ class WhiskeyShow extends Component {
     let { whiskey } = this.props;
     return (
       <>
-        <Col sm = "6" className = "show-body">
-          <Card body>
-          <CardTitle>Hi, my name is { whiskey.name }!</CardTitle>
-          <CardText>I am { whiskey.age } old. I am from { whiskey.country }. I taste like: { whiskey.notes} </CardText>
+      <div class = "whiskeycard">
+      <Col sm = "6" className = "show-body">
+        <Card body>
+        <CardTitle>Hi, my name is { whiskey.name }!</CardTitle>
+        <CardText>I am { whiskey.age } old. I am from { whiskey.country }. I taste like: { whiskey.notes} </CardText>
 
-          </Card>
+        </Card>
+
         </Col>
         <NavLink to={`/whiskeyedit/${whiskey.id}`}>
-            <Button color="secondary">
+            <Button color="success" id= "edit">
               Edit Whiskey
             </Button>
         </NavLink>
         <br/>
         <NavLink to="/whiskeyindex">
-            <Button onClick={ () => this.props.deleteWhiskey(whiskey.id) } color="danger" >
+            <Button onClick={ () => this.props.deleteWhiskey(whiskey.id) } color="danger" id="delete" >
               Delete a Whiskey
             </Button>
         </NavLink>
+        </div>
       </>
     )
   }

@@ -97,7 +97,7 @@ createNewWhiskey = (newwhiskey) => {
             <Route path='/whiskeynew' render = { (props) => <WhiskeyNew createNewWhiskey = {this.createNewWhiskey } />} />
             <Route exact path={"/whiskeyedit/:id"} render={ (props)  => {
                let id = props.match.params.id
-               let whiskey = this.state.whiskeys.find(whiskey => whiskey.id === parseInt(id))
+               let whiskey = this.state.whiskey.find(whiskey => whiskey.id === parseInt(id))
                return(
                  <WhiskeyEdit
                  updateWhiskey={this.updateWhiskey}
