@@ -56,7 +56,7 @@ class WhiskeyNew extends Component {
             <Button 
             id ="new-button"
             name="submit"
-            color="success"
+            color="info"
             onClick={this.handleSubmit}
             >
               Create a new Whiskey
