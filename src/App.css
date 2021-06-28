@@ -6,10 +6,18 @@
   background-color: #F1F1F1;
   text-align: right;
   padding: 5px;
+  font-family: "Gill Sans", sans-serif;
+  font-size: large;
   
+}
+#navbar{
+  font-family: "Gill Sans", sans-serif;
+  font-size: large;
 }
 ul.nav{
   justify-content: center;
+  
+  
 }
 #img {
   text-align: center;
